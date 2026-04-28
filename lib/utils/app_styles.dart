@@ -21,6 +21,7 @@ abstract class AppStyles {
 
   static TextStyle styleMedium16(BuildContext context) {
     return TextStyle(
+      
       color: const Color(0xFF064061),
       fontSize: 16,
       fontFamily: 'Montserrat',
