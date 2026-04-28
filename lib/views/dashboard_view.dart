@@ -6,6 +6,9 @@ class DashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: DashboardDesktopLayout());
+    return const Scaffold(
+      backgroundColor: Color(0xffF7F9FA),
+      body: DashboardDesktopLayout(),
+    );
   }
 }
