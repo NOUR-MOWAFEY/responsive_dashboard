@@ -13,7 +13,13 @@ class DashboardDesktopLayout extends StatelessWidget {
       children: [
         Expanded(child: CustomDrawer()),
         SizedBox(width: 32),
-        Expanded(flex: 2, child: ExpensesAndQuickInvoiceSection()),
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: EdgeInsets.only(top: 40),
+            child: ExpensesAndQuickInvoiceSection(),
+          ),
+        ),
         SizedBox(width: 24),
         Expanded(
           child: SingleChildScrollView(
@@ -26,6 +32,7 @@ class DashboardDesktopLayout extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(width: 32),
       ],
     );
   }

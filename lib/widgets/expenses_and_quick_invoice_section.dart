@@ -9,12 +9,7 @@ class ExpensesAndQuickInvoiceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       crossAxisAlignment: .start,
-      children: [
-        SizedBox(height: 40),
-        AllExpenses(),
-        SizedBox(height: 24),
-        QuickInvoice(),
-      ],
+      children: [AllExpenses(), SizedBox(height: 24), QuickInvoice()],
     );
   }
 }

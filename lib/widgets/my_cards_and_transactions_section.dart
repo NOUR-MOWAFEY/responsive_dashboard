@@ -9,7 +9,7 @@ class MyCardsAndTransactionsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(top: 40, right: 32),
+      padding: EdgeInsets.only(top: 40),
       child: CustomBackgroundContainer(
         padding: 24,
         child: Column(
