@@ -21,12 +21,9 @@ class MyCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: .end,
           children: [
+            const Flexible(child: SizedBox(height: 20)),
             ListTile(
-              contentPadding: const EdgeInsets.only(
-                left: 31,
-                right: 45,
-                top: 20,
-              ),
+              contentPadding: const EdgeInsets.only(left: 31, right: 45),
               title: Text(
                 'Name card',
                 style: AppStyles.styleRegular16(
@@ -43,7 +40,7 @@ class MyCard extends StatelessWidget {
             const Spacer(),
 
             Padding(
-              padding: const EdgeInsets.only(right: 24, bottom: 27),
+              padding: const EdgeInsets.only(right: 24),
               child: Column(
                 crossAxisAlignment: .end,
                 children: [
@@ -63,6 +60,7 @@ class MyCard extends StatelessWidget {
                 ],
               ),
             ),
+            const Flexible(child: SizedBox(height: 27)),
           ],
         ),
       ),

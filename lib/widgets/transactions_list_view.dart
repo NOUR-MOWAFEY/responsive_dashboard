@@ -28,11 +28,15 @@ class TransactionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: transactions.length,
-      itemBuilder: (context, index) =>
-          TransactionItem(transactionModel: transactions[index]),
+    return Column(
+      children: transactions
+          .map(
+            (e) => Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: TransactionItem(transactionModel: e),
+            ),
+          )
+          .toList(),
     );
   }
 }

@@ -35,7 +35,7 @@ class TransactionHistorySection extends StatelessWidget {
           ).copyWith(color: Color(0xffAAAAAA)),
         ),
 
-        const SizedBox(height: 16),
+        const SizedBox(height: 4),
 
         const TransactionsListView(),
       ],

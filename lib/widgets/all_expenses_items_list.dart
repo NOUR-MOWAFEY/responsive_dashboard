@@ -39,31 +39,57 @@ class _AllExpensesItemsListState extends State<AllExpensesItemsList> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () => _update(0),
+            child: AllExpensesItem(
+              allExpensesItemModel: expenses[0],
+              isActive: 0 == activeIndex,
+            ),
+          ),
+        ),
+
+        const SizedBox(width: 12),
+
+        Expanded(
+          child: GestureDetector(
+            onTap: () => _update(1),
+            child: AllExpensesItem(
+              allExpensesItemModel: expenses[1],
+              isActive: 1 == activeIndex,
+            ),
+          ),
+        ),
+
+        const SizedBox(width: 12),
+
+        Expanded(
+          child: GestureDetector(
+            onTap: () => _update(2),
+            child: AllExpensesItem(
+              allExpensesItemModel: expenses[2],
+              isActive: 2 == activeIndex,
+            ),
+          ),
+        ),
+      ],
+    );
+
+    return Row(
       children: expenses.asMap().entries.map((e) {
         final index = e.key;
         final item = e.value;
 
-        if (index == 1) {
-          return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: GestureDetector(
-                onTap: () => _update(index),
-                child: AllExpensesItem(
-                  allExpensesItemModel: item,
-                  isActive: index == activeIndex,
-                ),
-              ),
-            ),
-          );
-        }
-
         return Expanded(
-          child: GestureDetector(
-            onTap: () => _update(index),
-            child: AllExpensesItem(
-              allExpensesItemModel: item,
-              isActive: index == activeIndex,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+            child: GestureDetector(
+              onTap: () => _update(index),
+              child: AllExpensesItem(
+                allExpensesItemModel: item,
+                isActive: index == activeIndex,
+              ),
             ),
           ),
         );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashboard/utils/size_config.dart';
 
 class AdaptiveLayout extends StatelessWidget {
   const AdaptiveLayout({
@@ -13,9 +14,9 @@ class AdaptiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < 800) {
+        if (constraints.maxWidth < SizeConfig.tablet) {
           return mobileLayout(context);
-        } else if (constraints.maxWidth < 1200) {
+        } else if (constraints.maxWidth < SizeConfig.desktop) {
           return tabletLayout(context);
         } else {
           return desktopLayout(context);
@@ -25,23 +26,23 @@ class AdaptiveLayout extends StatelessWidget {
   }
 }
 
-double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
-  double scaleFactor = getScaleFactor(context);
-  double responsiveSize = fontSize * scaleFactor;
+// double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
+//   double scaleFactor = getScaleFactor(context);
+//   double responsiveSize = fontSize * scaleFactor;
 
-  double lowerLimit = fontSize * 0.8;
-  double upperLimit = fontSize * 1.2;
-  return responsiveSize.clamp(lowerLimit, upperLimit);
-}
+//   double lowerLimit = fontSize * 0.8;
+//   double upperLimit = fontSize * 1.2;
+//   return responsiveSize.clamp(lowerLimit, upperLimit);
+// }
 
-double getScaleFactor(BuildContext context) {
-  double width = MediaQuery.sizeOf(context).width;
+// double getScaleFactor(BuildContext context) {
+//   double width = MediaQuery.sizeOf(context).width;
 
-  if (width < 600) {
-    return width / 400;
-  } else if (width < 900) {
-    return width / 700;
-  } else {
-    return width / 1000;
-  }
-}
+//   if (width < 600) {
+//     return width / 400;
+//   } else if (width < 900) {
+//     return width / 700;
+//   } else {
+//     return width / 1000;
+//   }
+// }
