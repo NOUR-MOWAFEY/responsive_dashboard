@@ -75,26 +75,6 @@ class _AllExpensesItemsListState extends State<AllExpensesItemsList> {
         ),
       ],
     );
-
-    return Row(
-      children: expenses.asMap().entries.map((e) {
-        final index = e.key;
-        final item = e.value;
-
-        return Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
-            child: GestureDetector(
-              onTap: () => _update(index),
-              child: AllExpensesItem(
-                allExpensesItemModel: item,
-                isActive: index == activeIndex,
-              ),
-            ),
-          ),
-        );
-      }).toList(),
-    );
   }
 
   void _update(int index) {
